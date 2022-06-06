@@ -49,7 +49,7 @@ app.get('/search/:searchid', async(req, res, next) => {
 
 
 
-app.listen(app.get('port'), server => {
+app.listen(server => {
     console.info(`
 Server listen on port $ { app.get('port') }
 `);
