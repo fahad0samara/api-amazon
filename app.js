@@ -7,7 +7,7 @@ const cheerio = require('cheerio');
 const apikey = 'e4037415b3d58b93e689d4ed83405ffb'
 const baseurl = `http://api.scraperapi.com?api_key=${apikey}&autoparse=true`
 
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 app.use(express.json())
 app.get('/', (req, res, next) => {
     res.send('<h1>Hello world<h1>');
