@@ -7,7 +7,7 @@ const cheerio = require('cheerio');
 const apikey = 'e4037415b3d58b93e689d4ed83405ffb'
 const baseurl = `http://api.scraperapi.com?api_key=${apikey}&autoparse=true`
 
-app.set('port', process.env.port || 3000)
+const port = process.env.port || 3000
 app.use(express.json())
 app.get('/', (req, res, next) => {
     res.send('<h1>Hello world<h1>');
@@ -44,13 +44,4 @@ app.get('/search/:searchid', async(req, res, next) => {
         res.json(error)
     }
 })
-
-
-
-
-
-app.listen(server => {
-    console.info(`
-Server listen on port $ { app.get('port') }
-`);
-})
+app.listen(port, () => console.log(`Listening on port ${port}`));
